@@ -28,7 +28,9 @@ export class GptComponent implements OnInit {
   constructor(private fb: FormBuilder, private httpClient: HttpClient) {}
 
   handleAskGPT() {
-    const httpHeaders = new HttpHeaders().set("Authorization", "Bearer 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");
+    // TODO add and externalise apikey property
+    let apikey;
+    const httpHeaders = new HttpHeaders().set("Authorization", "Bearer "+ apikey);
     console.log("Headers: ", httpHeaders);
     this.messages.push(
       {role: "user", content: this.queryFormGroup.value.query} 
